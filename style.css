@@ -1,0 +1,21 @@
+.pointer {
+  display: flex;
+}
+
+
+.pointer img {
+  width: 360px;
+  height: auto;
+}
+
+.fire {
+  width : 90;
+  height: auto;
+  rotate: calc(-90deg);
+}
+
+.parent-div {
+  display: grid;
+  place-items: start center;
+  margin-top: 80px;
+}
