@@ -13,12 +13,24 @@ timer();
 
 function timer() {
 
-  let x = 0
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
 
   setInterval(() => {
     
-    x++;
-    console.log(x);
+    seconds++
+
+    if (seconds > 59) {
+      seconds = 0;
+      minute++
+    }
+
+    if (minute > 60) {
+      hour++
+    }
+
+    document.querySelector('.timer').innerHTML = `Time played: ${hour}:${minute}:${seconds}`;
 
   }, 1000)
 }
