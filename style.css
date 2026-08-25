@@ -4,12 +4,16 @@ body {
   font-family: Bebas Neue;
 }
 
+p {
+    color: white;
+}
+
 .pointer {
   display: flex;
 }
 
 
-.pointer img {
+.pointer img{
   width: 360px;
   height: auto;
 }
@@ -21,9 +25,16 @@ body {
 }
 
 .parent-div {
-  display: grid;
-  place-items: start center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 80px;
+}
+
+
+.spin{
+    transform: rotate(360deg);
+    transition: transform 0.5s;
 }
 
 .btn-section {
@@ -39,6 +50,7 @@ body {
 
 .timer{
   margin-top: 5px;
+  color: white;
 }
 
 @keyframes move {
