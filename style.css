@@ -35,7 +35,6 @@ p {
   margin-top: 80px;
 }
 
-
 .spin{
     transform: rotate(360deg);
     transition: transform 0.5s;
@@ -44,6 +43,7 @@ p {
 .reload{
    animation: bounceDown 0.5s ease;
 }
+
 
 @keyframes bounceDown {
     0% {
@@ -59,9 +59,32 @@ p {
     }
 }
 
+.shoot {
+    animation: shoot 0.5s ease;
+}
+
+@keyframes shoot {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotate(90deg) translateY(0px);
+    }
+
+    100% {
+        transform: rotate(90deg) translateY(40px);
+    }
+}
+
 .btn-section {
   display: flex;
   justify-content: space-between;
+}
+
+
+.fire:hover img{
+    transform: translateX(120deg);
 }
 
 /*FONT*/

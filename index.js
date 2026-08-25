@@ -2,11 +2,18 @@ const fireBtn = document.querySelector('.fire-btn');
 const shotCounter = document.querySelector('.shot-counter');
 const resetButton = document.querySelector('.reset-btn');
 const flipBtn = document.querySelector('.flip-btn');
-const cursor = document.querySelector('.pointer');
+const cursor = document.querySelector('.cursor');
 const reloadBtn = document.querySelector('.reload-btn');
 const ammoCounter = document.querySelector('.ammo');
 
-let ammo = 5;
+const fire = document.querySelector('.fire');
+
+let ammo = 0;
+
+let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users that will join the site for the first time.*/
+
+ammoCounter.innerHTML = `AMMO: ${ammo}`;
+shotCounter.innerHTML = `<p>You shot: ${shotN}</p>`;
 
 const sounds = {
   audio1: new Audio('sounds/fire-whoosh.wav'),
@@ -41,14 +48,14 @@ function timer() {
 
   }, 1000)
 }
-
-let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users that will join the site for the first time.*/
-
+/*this fire button is our main problem, here I want to make my cursor use that style to make a shooting effect. */
   fireBtn.addEventListener('click', () => {
 
+    ammo--;
+    
     ammoCounter.innerHTML = `AMMO: ${ammo}`;
 
-    ammo--;
+    
 
     sounds.audio1.play();
 
@@ -62,6 +69,12 @@ let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users 
       sounds.audio4.play();
       ammo = 0;
     }
+
+    cursor.classList.remove('shoot');
+
+    void cursor.offsetWidth
+
+    cursor.classList.add('shoot');
 
   });
 
@@ -86,6 +99,7 @@ let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users 
     void cursor.offsetWidth
 
     cursor.classList.add('reload');
+
     } else {
       sounds.audio4.play();
     }
