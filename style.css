@@ -8,7 +8,7 @@ p {
     color: white;
 }
 
-.pointer {
+.pointer{
   display: flex;
 }
 
@@ -37,22 +37,46 @@ p {
     transition: transform 0.5s;
 }
 
+.reload{
+   animation: bounceDown 0.5s ease;
+}
+
+@keyframes bounceDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .btn-section {
   display: flex;
   justify-content: space-between;
 }
 
+/*FONT*/
 .btn-section button {
   font-family: 'Courier New', Courier, monospace;
   border-radius: 5px;
   border-width: 1px;
 }
+/*FONT*/
 
+/*FONT*/
 .timer{
   margin-top: 5px;
   color: white;
 }
+/*TIMER*/
 
+
+/*EXTERNAL*/
 @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);

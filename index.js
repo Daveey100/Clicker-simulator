@@ -3,6 +3,8 @@ const shotCounter = document.querySelector('.shot-counter');
 const resetButton = document.querySelector('.reset-btn');
 const flipBtn = document.querySelector('.flip-btn');
 const cursor = document.querySelector('.pointer');
+const reloadBtn = document.querySelector('.reload-btn');
+
 const sounds = {
   audio1: new Audio('sounds/fire-whoosh.wav'),
   audio2: new Audio('sounds/gun-reloading.mp3'),
@@ -58,6 +60,8 @@ let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users 
 
     shotCounter.innerHTML = `<p>You shot: ${shotN}</p>`;
 
+
+
   });
 
   resetButton.addEventListener('click', () => {
@@ -68,8 +72,19 @@ let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users 
     shotCounter.innerHTML = `<p>You shot: ${shotN}</p>`;
   });
 
+  reloadBtn.addEventListener('click', () => {
+
+    sounds.audio2.play();
+
+    cursor.classList.remove('reload');
+
+    void cursor.offsetWidth
+
+    cursor.classList.add('reload');
+  })
+
   flipBtn.addEventListener('click', () => {
-    
+
     /*if (cursor.classList.contains('spin')) {
       cursor.classList.remove('spin');
     } else {
@@ -78,7 +93,7 @@ let shotN = JSON.parse(localStorage.getItem('shots')) ?? 0; /*This is for users 
 
     cursor.classList.remove('spin');
 
-    void cursor.offsetWidth;
+    void cursor.offsetWidth; //Makes that element update very fast
 
     cursor.classList.add('spin');
 
