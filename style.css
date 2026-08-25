@@ -83,8 +83,9 @@ p {
 }
 
 
-.fire:hover img{
-    transform: translateX(120deg);
+.fire-div:hover img{
+    transform: translateY(240px);
+    transition: transform 0.25s linear;
 }
 
 /*FONT*/
