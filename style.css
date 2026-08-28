@@ -82,11 +82,16 @@ p {
   justify-content: space-between;
 }
 
-
-.fire-div:hover img{
+.fire {
     transform: translateY(240px);
     transition: transform 0.25s linear;
 }
+
+.fire {
+    display:none;
+}
+
+
 
 /*FONT*/
 .btn-section button {

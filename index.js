@@ -22,6 +22,10 @@ const sounds = {
   audio4: new Audio('sounds/wrong-answer-sound-effect.mp3')
 }
 
+cursor.addEventListener('animationend', () => {
+  cursor.classList.remove('shoot', 'reload', 'spin');
+});
+
 
 timer();
 
